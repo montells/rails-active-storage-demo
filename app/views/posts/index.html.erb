@@ -18,7 +18,7 @@
       <tr>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td><%= post.image.filename %></td>
+        <td><%= post.image.filename if post.image.attached? %></td>
         <td><%= post.photos_filesname %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>

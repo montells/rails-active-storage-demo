@@ -13,14 +13,14 @@
 <p>
   <strong>Image:</strong>
   <br>
-  <%= image_tag @post.image %>
+  <%= image_tag @post.image if @post.image.attached? %>
 </p>
 
 <p>
   <strong>Photos:</strong>
   <br>
   <% @post.photos.each do |photo| %>
-    <%= image_tag photo %>
+    <%= image_tag photo.variant(resize: "200x200", monochrome: true) %>
   <% end %>
 </p>
 
