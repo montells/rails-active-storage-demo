@@ -13,7 +13,7 @@
 <p>
   <strong>Image:</strong>
   <br>
-  <%= image_tag @post.image if @post.image.attached? %>
+  <%= image_tag @post.watermarked_image if @post.image.attached? %>
 </p>
 
 <p>
