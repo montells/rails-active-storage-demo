@@ -16,7 +16,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title, post %></td>
         <td><%= post.content %></td>
         <td><%= post.image.filename if post.image.attached? %></td>
         <td><%= post.photos_filesname %></td>
