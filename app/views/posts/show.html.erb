@@ -20,7 +20,7 @@
   <strong>Photos:</strong>
   <br>
   <% @post.photos.each do |photo| %>
-    <%= image_tag photo.variant(resize: "200x200", monochrome: true) %>
+    <%= video_tag rails_blob_path(photo), controls: true %>
   <% end %>
 </p>
 
