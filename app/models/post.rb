@@ -4,6 +4,11 @@ class Post < ApplicationRecord
 
   scope :with_eager_loading_photos, -> {eager_load photos_attachment: :blob}
 
+  attr_accessor :remove_photos
+  after_save do
+    Array(remove_photos).each { |id| photos.find_by_id(id).try(:purge) }
+  end
+
   def photos_filesname
     photos.map {|p| p.filename.to_s}
   end
